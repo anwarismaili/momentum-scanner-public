@@ -52,7 +52,7 @@ export function TopBar() {
               Upgrade
             </Link>
           )}
-          <UserButton afterSignOutUrl="/#/" />
+          <UserButton afterSignOutUrl="https://anwarismaili.github.io/momentumscan-landing/" />
         </SignedIn>
       </div>
     </header>
