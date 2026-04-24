@@ -10,6 +10,28 @@ export default function BillingSuccess() {
   useEffect(() => {
     // Refetch /api/me so the sidebar tier badge and gating both update.
     queryClient.invalidateQueries({ queryKey: ["/api/me"] });
+
+    // Clear stripe redirect params from the URL so a refresh stays clean.
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("stripe_session_id") || params.has("stripe_canceled")) {
+      params.delete("stripe_session_id");
+      params.delete("stripe_canceled");
+      const qs = params.toString();
+      const cleanUrl =
+        window.location.pathname +
+        (qs ? `?${qs}` : "") +
+        window.location.hash;
+      window.history.replaceState({}, "", cleanUrl);
+    }
+
+    // Webhook may take a few seconds — re-poll /api/me at 2s, 5s, 10s.
+    const timers = [2000, 5000, 10000].map((ms) =>
+      setTimeout(
+        () => queryClient.invalidateQueries({ queryKey: ["/api/me"] }),
+        ms,
+      ),
+    );
+    return () => timers.forEach(clearTimeout);
   }, [queryClient]);
 
   return (
