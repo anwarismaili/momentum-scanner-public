@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------
+   MomentumScan — Terminal Dark Design System
+   Locked to the dark aesthetic that matches the legal pages:
+     bg       #0a0b0d
+     surface  #111316
+     border   #1f2226
+     text     #e6e7ea
+     muted    #8b8d92
+     accent   #00d18f (bullish, primary)
+     bear     #ff5b5b
+   Numbers and tickers use JetBrains Mono with tabular-nums lining-nums.
+------------------------------------------------------------------ */
+
+@layer base {
+  :root {
+    /* Tailwind tokens (HSL space, no "deg" suffix). */
+    --background: 220 10% 5%;         /* #0a0b0d */
+    --foreground: 220 6% 91%;         /* #e6e7ea */
+    --surface: 220 8% 8%;              /* #111316 */
+    --card: 220 8% 8%;                 /* #111316 */
+    --card-foreground: 220 6% 91%;
+    --popover: 220 10% 7%;
+    --popover-foreground: 220 6% 91%;
+    --muted: 220 7% 14%;               /* #1f2226 */
+    --muted-foreground: 220 4% 56%;    /* #8b8d92 */
+    --accent: 220 7% 12%;              /* subtle hover fill */
+    --accent-foreground: 220 6% 91%;
+    --border: 220 7% 14%;              /* #1f2226 */
+    --input: 220 7% 14%;
+    --ring: 158 100% 41%;              /* accent green */
+    --primary: 158 100% 41%;           /* #00d18f */
+    --primary-foreground: 220 10% 5%;
+    --secondary: 220 7% 14%;
+    --secondary-foreground: 220 6% 91%;
+    --destructive: 0 100% 68%;         /* #ff5b5b */
+    --destructive-foreground: 0 0% 100%;
+    --bull: 158 100% 41%;              /* #00d18f — green */
+    --bear: 0 100% 68%;                /* #ff5b5b — red */
+    --neutral-amber: 40 95% 55%;       /* amber */
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    background-color: #0a0b0d;
+    color: hsl(var(--foreground));
+    font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+      Roboto, sans-serif;
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* Tabular, lining nums on every numeric display */
+  .tabular,
+  .font-mono,
+  code,
+  pre,
+  th,
+  td {
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.3);
+    color: hsl(var(--foreground));
+  }
+
+  /* Custom scrollbar — match terminal aesthetic */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(220 7% 22%);
+  }
+}
+
+@layer components {
+  /* ── Terminal KPI card ──────────────────────────────────────── */
+  .kpi-card {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: 6px;
+    padding: 12px;
+  }
+
+  /* ── Badge variants used across pages ──────────────────────── */
+  .badge-bull {
+    background: hsl(var(--bull) / 0.15);
+    color: hsl(var(--bull));
+    border: 1px solid hsl(var(--bull) / 0.3);
+  }
+  .badge-bear {
+    background: hsl(var(--bear) / 0.15);
+    color: hsl(var(--bear));
+    border: 1px solid hsl(var(--bear) / 0.3);
+  }
+  .badge-neutral {
+    background: hsl(var(--neutral-amber) / 0.15);
+    color: hsl(var(--neutral-amber));
+    border: 1px solid hsl(var(--neutral-amber) / 0.3);
+  }
+  .badge-watch {
+    background: hsl(210 80% 60% / 0.15);
+    color: hsl(210 80% 70%);
+    border: 1px solid hsl(210 80% 60% / 0.3);
+  }
+
+  .text-bull {
+    color: hsl(var(--bull));
+  }
+  .text-bear {
+    color: hsl(var(--bear));
+  }
+  .text-neutral-amber {
+    color: hsl(var(--neutral-amber));
+  }
+
+  /* ── Terminal-style nav link ──────────────────────────────── */
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: hsl(var(--muted-foreground));
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 120ms, color 120ms;
+  }
+  .nav-link:hover {
+    background: hsl(var(--muted));
+    color: hsl(var(--foreground));
+  }
+  .nav-link[data-active="true"] {
+    background: hsl(var(--primary) / 0.12);
+    color: hsl(var(--primary));
+  }
+  .nav-link[data-active="true"] .nav-icon {
+    color: hsl(var(--primary));
+  }
+
+  /* Terminal title bar accent underline */
+  .title-rule {
+    border-bottom: 1px solid hsl(var(--border));
+  }
+}

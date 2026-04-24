@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — MomentumScan</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0a0b0d;
+      color: #e5e7eb;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      padding: 48px 24px 80px;
+    }
+    .container { max-width: 820px; margin: 0 auto; }
+    .logo { font-size: 1.2rem; font-weight: 700; color: #00d18f; letter-spacing: 0.04em; margin-bottom: 8px; }
+    .meta { font-size: 0.85rem; color: #6b7280; margin-bottom: 40px; }
+    h1 { font-size: 2rem; font-weight: 700; color: #f9fafb; margin-bottom: 8px; }
+    h2 {
+      font-size: 1.15rem; font-weight: 600; color: #00d18f;
+      margin-top: 48px; margin-bottom: 12px;
+      padding-bottom: 6px; border-bottom: 1px solid #1f2937;
+    }
+    h3 { font-size: 1rem; font-weight: 600; color: #d1d5db; margin-top: 24px; margin-bottom: 8px; }
+    p { margin-bottom: 14px; color: #d1d5db; }
+    ul, ol { padding-left: 24px; margin-bottom: 14px; color: #d1d5db; }
+    li { margin-bottom: 6px; }
+    a { color: #00d18f; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .callout {
+      background: #111318; border-left: 3px solid #00d18f;
+      padding: 16px 20px; border-radius: 4px; margin: 20px 0;
+    }
+    .callout p { margin: 0; font-size: 0.95rem; }
+    table {
+      width: 100%; border-collapse: collapse; margin: 20px 0;
+      font-size: 0.9rem;
+    }
+    th {
+      text-align: left; padding: 10px 12px;
+      background: #111318; color: #00d18f;
+      border-bottom: 1px solid #1f2937;
+    }
+    td {
+      padding: 10px 12px; color: #d1d5db;
+      border-bottom: 1px solid #1a1d24;
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    footer {
+      margin-top: 64px; padding-top: 24px;
+      border-top: 1px solid #1f2937;
+      font-size: 0.8rem; color: #6b7280; text-align: center; line-height: 1.6;
+    }
+    footer a { color: #4b5563; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="logo">MomentumScan</div>
+  <h1>Privacy Policy</h1>
+  <div class="meta">Last updated: April 23, 2026 &nbsp;·&nbsp; Effective immediately</div>
+
+  <div class="callout">
+    <p>Plain summary: We collect what we need to run the service — your email, payment info (handled by Stripe, not us), and basic usage logs. We don't sell your data. We don't run ad tracking. Here's the full picture.</p>
+  </div>
+
+  <h2>1. Who We Are</h2>
+  <p>MomentumScan is operated by Anwar Ismaili as an independent software product. When this policy refers to "we," "us," or "our," it means Anwar Ismaili / MomentumScan. For privacy inquiries, contact us at <a href="mailto:privacy@momentumscan.com">privacy@momentumscan.com</a>.</p>
+  <p>MomentumScan is an educational stock scanner. We are not a financial institution. We do not hold, transfer, or custody your money.</p>
+
+  <h2>2. What We Collect</h2>
+
+  <h3>2.1 Account Information (via Clerk)</h3>
+  <p>When you sign up, our authentication provider Clerk collects:</p>
+  <ul>
+    <li>Email address (required)</li>
+    <li>Password hash (never stored in plaintext — Clerk handles this)</li>
+    <li>If you use Google OAuth: your Google-provided name, profile picture URL, and email</li>
+    <li>Account creation timestamp and last sign-in timestamp</li>
+    <li>Clerk-generated user ID (used internally to link your account to our database)</li>
+  </ul>
+
+  <h3>2.2 Billing Information (via Stripe)</h3>
+  <p>Payment is processed exclusively by Stripe, Inc. We never see or store your full credit card number, CVV, or bank account details. What we do receive from Stripe:</p>
+  <ul>
+    <li>Stripe Customer ID</li>
+    <li>Subscription status (active, trialing, past_due, canceled)</li>
+    <li>Last 4 digits of card on file (for display in your account settings)</li>
+    <li>Billing period start and end dates</li>
+    <li>Payment history (successful charges, failed attempts)</li>
+  </ul>
+
+  <h3>2.3 Scanner Usage Logs</h3>
+  <p>When you use the scanner, we log:</p>
+  <ul>
+    <li>Which setup types you viewed and when</li>
+    <li>Tickers added to your watchlist</li>
+    <li>Alert configurations you create</li>
+    <li>Backtester queries you run (setup type, date range — not financial decisions)</li>
+    <li>API request timestamps and response codes (for debugging and reliability)</li>
+  </ul>
+  <p>We use this data to understand which features are useful and to debug problems. We don't sell it or share it with advertisers.</p>
+
+  <h3>2.4 Technical Metadata</h3>
+  <p>Our server and infrastructure automatically collect:</p>
+  <ul>
+    <li>IP address (logged per request, used for rate limiting and abuse detection)</li>
+    <li>Browser type and version (from User-Agent header)</li>
+    <li>Operating system</li>
+    <li>Referring URL (if you arrived from another page)</li>
+    <li>Timestamps of all requests</li>
+  </ul>
+
+  <h3>2.5 Email Communications</h3>
+  <p>If you're on the Free Tier, you receive a daily digest email. We track whether emails are delivered (via our transactional email provider), and we may track open rates in aggregate — not individually linked to your identity for advertising purposes. You can unsubscribe from digest emails at any time via the unsubscribe link in each email.</p>
+
+  <h2>3. How We Use Your Data</h2>
+  <table>
+    <thead>
+      <tr><th>Purpose</th><th>Data Used</th><th>Basis</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Deliver the Service</td>
+        <td>Email, user ID, subscription status, usage logs</td>
+        <td>Contract performance</td>
+      </tr>
+      <tr>
+        <td>Billing and subscription management</td>
+        <td>Stripe customer ID, subscription status</td>
+        <td>Contract performance</td>
+      </tr>
+      <tr>
+        <td>Transactional emails (receipts, trial reminders, payment failures)</td>
+        <td>Email address</td>
+        <td>Contract performance / Legitimate interest</td>
+      </tr>
+      <tr>
+        <td>Daily scanner digest (Free Tier)</td>
+        <td>Email address, subscription tier</td>
+        <td>Consent (sign-up)</td>
+      </tr>
+      <tr>
+        <td>Analytics and product improvement</td>
+        <td>Usage logs, technical metadata (aggregated)</td>
+        <td>Legitimate interest</td>
+      </tr>
+      <tr>
+        <td>Security and abuse prevention</td>
+        <td>IP address, request logs</td>
+        <td>Legitimate interest</td>
+      </tr>
+      <tr>
+        <td>Legal compliance</td>
+        <td>Any data required by applicable law</td>
+        <td>Legal obligation</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>We do not use your data for advertising targeting, behavioral profiling for third parties, or sale to data brokers. Ever.</p>
+
+  <h2>4. Third-Party Processors</h2>
+  <p>We share your data only with the following service providers, each bound by appropriate data processing agreements:</p>
+  <table>
+    <thead>
+      <tr><th>Processor</th><th>Role</th><th>Data Shared</th><th>Privacy Policy</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Clerk</strong></td>
+        <td>Authentication and user management</td>
+        <td>Email, password (hashed), OAuth tokens</td>
+        <td><a href="https://clerk.com/privacy" target="_blank">clerk.com/privacy</a></td>
+      </tr>
+      <tr>
+        <td><strong>Stripe, Inc.</strong></td>
+        <td>Payment processing and subscription billing</td>
+        <td>Email, payment method, billing history</td>
+        <td><a href="https://stripe.com/privacy" target="_blank">stripe.com/privacy</a></td>
+      </tr>
+      <tr>
+        <td><strong>Railway (Postgres)</strong></td>
+        <td>Database hosting for scanner data and user records</td>
+        <td>User IDs, subscription records, usage logs</td>
+        <td><a href="https://railway.app/legal/privacy" target="_blank">railway.app/legal/privacy</a></td>
+      </tr>
+      <tr>
+        <td><strong>Transactional Email Provider</strong></td>
+        <td>Sending digest and transactional emails</td>
+        <td>Email address, email content</td>
+        <td><em>[TBD — will be updated before launch]</em></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>We do not currently use any analytics platforms (e.g., Google Analytics, Mixpanel) that track individual behavior across sessions for advertising purposes. If this changes, we will update this policy and notify users.</p>
+
+  <h2>5. Cookies</h2>
+  <p>At launch, MomentumScan uses only functional cookies necessary to operate the Service:</p>
+  <ul>
+    <li><strong>Session cookies:</strong> Set by Clerk to maintain your authenticated session. These expire when you sign out or when the session token lifetime is reached.</li>
+    <li><strong>Preference cookies:</strong> If we store any UI preferences (e.g., selected setup view) in your browser's local storage. Not transmitted to third parties.</li>
+  </ul>
+  <p>We do not set advertising cookies, third-party tracking pixels, or cross-site tracking cookies. We do not use Google Analytics or Facebook Pixel.</p>
+  <p>Your browser can be configured to block or delete cookies. Blocking functional session cookies will prevent you from logging in.</p>
+
+  <h2>6. Data Retention</h2>
+  <ul>
+    <li><strong>Active accounts:</strong> Data retained as long as your account exists.</li>
+    <li><strong>Canceled accounts:</strong> We retain account data for 90 days after cancellation in case you wish to reactivate, then delete or anonymize it.</li>
+    <li><strong>Billing records:</strong> Retained for 7 years to comply with financial record-keeping requirements.</li>
+    <li><strong>Server logs (IP, request metadata):</strong> Retained for 30 days, then deleted.</li>
+    <li><strong>Stripe data:</strong> Subject to Stripe's own retention policies, which we cannot unilaterally control.</li>
+  </ul>
+
+  <h2>7. Your Rights</h2>
+  <p>Regardless of where you live, you can always:</p>
+  <ul>
+    <li><strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
+    <li><strong>Delete:</strong> Request deletion of your account and associated personal data (subject to our retention obligations above).</li>
+    <li><strong>Export:</strong> Request your data in a portable format (CSV or JSON).</li>
+    <li><strong>Correct:</strong> Update your email or account information via your account settings or by contacting us.</li>
+    <li><strong>Withdraw consent:</strong> Unsubscribe from digest emails at any time via the unsubscribe link.</li>
+  </ul>
+  <p>To exercise any of these rights, email <a href="mailto:privacy@momentumscan.com">privacy@momentumscan.com</a> with the subject "Privacy Request." We will respond within 30 days. We may need to verify your identity before fulfilling a request.</p>
+
+  <h3>7.1 CCPA (California Residents)</h3>
+  <p>California residents have specific rights under the California Consumer Privacy Act (CCPA). In addition to the rights above:</p>
+  <ul>
+    <li>You have the right to know the categories and specific pieces of personal information we've collected, the purposes for which it's used, and whether it's been sold or disclosed.</li>
+    <li>We do not sell personal information as defined by the CCPA.</li>
+    <li>You have the right to opt out of the sale of your personal information. Since we don't sell it, no opt-out is currently necessary — but we will honor any such request.</li>
+    <li>You have the right to non-discrimination for exercising your CCPA rights.</li>
+  </ul>
+  <p><em>[Placeholder: If annual gross revenue exceeds $25 million or data processed exceeds CCPA thresholds, additional compliance measures including a formal CCPA notice should be implemented. Consult legal counsel.]</em></p>
+
+  <h3>7.2 GDPR (EEA and UK Residents)</h3>
+  <p>If you are located in the European Economic Area or United Kingdom, additional rights apply under GDPR:</p>
+  <ul>
+    <li>Right to restrict processing</li>
+    <li>Right to object to processing based on legitimate interest</li>
+    <li>Right to lodge a complaint with your local supervisory authority</li>
+  </ul>
+  <p>Our lawful basis for processing is set out in Section 3. We do not currently have a formal EU representative or Data Protection Officer, as we operate below the thresholds that require one. <em>[Placeholder: If user base grows to include significant EEA users, consider appointing an EU representative per Art. 27 GDPR and review Standard Contractual Clauses with sub-processors.]</em></p>
+
+  <h2>8. Children's Privacy</h2>
+  <p>MomentumScan is not intended for users under 18 years of age. We do not knowingly collect personal information from children. If we become aware that we have inadvertently collected information from a child under 13, we will delete it promptly. If you believe a child has provided us with personal information, contact us at <a href="mailto:privacy@momentumscan.com">privacy@momentumscan.com</a>.</p>
+
+  <h2>9. Security</h2>
+  <p>We take reasonable technical and organizational measures to protect your data:</p>
+  <ul>
+    <li>All data in transit is encrypted via TLS (HTTPS).</li>
+    <li>Passwords are never stored — authentication is handled by Clerk, which uses industry-standard hashing.</li>
+    <li>Payment card data never touches our servers — Stripe handles tokenization and PCI compliance.</li>
+    <li>Our Postgres database on Railway is not publicly accessible; connections require credentials and are within a private network.</li>
+    <li>API keys and secrets are stored as environment variables, not in source code.</li>
+    <li>Access to production systems is limited to the operator (Anwar Ismaili).</li>
+  </ul>
+  <p>No system is perfectly secure. We cannot guarantee absolute security, but we will act promptly if a breach occurs.</p>
+
+  <h2>10. Data Breach Notification</h2>
+  <p>If we become aware of a data breach that may affect your personal information, we will:</p>
+  <ul>
+    <li>Notify affected users by email within 72 hours of becoming aware of the breach (consistent with GDPR Article 33 standards, applied as a baseline);</li>
+    <li>Describe the nature of the breach, the data affected, likely consequences, and steps we are taking;</li>
+    <li>Notify applicable regulatory authorities as required by law.</li>
+  </ul>
+
+  <h2>11. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top and notify you by email if the changes are material. Continued use of the Service after changes constitutes acceptance of the updated policy.</p>
+
+  <h2>12. Contact for Privacy Requests</h2>
+  <p>For any privacy-related questions, data requests, or concerns:</p>
+  <ul>
+    <li><strong>Email:</strong> <a href="mailto:privacy@momentumscan.com">privacy@momentumscan.com</a></li>
+    <li><strong>Response time:</strong> We aim to respond within 5 business days for general questions, and within 30 days for formal data requests.</li>
+    <li><strong>Operator:</strong> Anwar Ismaili / MomentumScan</li>
+  </ul>
+
+  <footer>
+    <p><strong>MomentumScan is an educational research tool, not a registered investment adviser.</strong><br>
+    All scanner output is for informational purposes only. Nothing on this platform constitutes investment advice or a recommendation to buy or sell any security. Trading involves substantial risk of loss. Past performance does not guarantee future results.</p>
+    <p style="margin-top:12px;">
+      <a href="/legal/terms.html">Terms</a> &nbsp;·&nbsp;
+      <a href="/legal/privacy.html">Privacy</a> &nbsp;·&nbsp;
+      <a href="/legal/disclaimer.html">Risk Disclaimer</a> &nbsp;·&nbsp;
+      <a href="/legal/refund.html">Refund Policy</a>
+    </p>
+    <p style="margin-top:8px;">&copy; 2026 MomentumScan. Operated by Anwar Ismaili.</p>
+  </footer>
+</div>
+</body>
+</html>
