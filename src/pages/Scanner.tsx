@@ -650,6 +650,10 @@ export default function ScannerPage() {
   const scanMessage: string | undefined = scanResponse?.message;
   const fetchedAt: number | undefined = scanResponse?.fetchedAt;
   const isScanRefreshing = scanResponse?.status === "refreshing";
+  // Free-tier backend returns { truncated: true, totalAvailable: N, tier: 'free' }.
+  // Show an upgrade banner so users know the list is limited — don't hide it silently.
+  const isTruncated: boolean = scanResponse?.truncated === true;
+  const totalAvailable: number | undefined = scanResponse?.totalAvailable;
 
   // ── Poll for status while refreshing ──────────────────
   useEffect(() => {
@@ -753,6 +757,28 @@ export default function ScannerPage() {
 
       {/* Status banner */}
       <StatusBanner status={scanStatus} message={scanMessage} fetchedAt={fetchedAt} inProgress={isScanRefreshing} />
+
+      {/* Free-tier upgrade banner — shown when backend truncates the scan list */}
+      {isTruncated && (
+        <div className="mx-4 mb-2 flex items-center justify-between gap-3 rounded-md border border-primary/30 bg-primary/5 px-3 py-2 text-xs">
+          <div className="flex items-center gap-2">
+            <Zap size={14} className="text-primary" />
+            <span>
+              Showing top <strong>{stocks.length}</strong> of{" "}
+              <strong>{totalAvailable ?? "all"}</strong> momentum candidates.
+              Upgrade to Pro to see the full scan, unlock Watchlist &amp; Backtester.
+            </span>
+          </div>
+          <Button
+            size="sm"
+            className="h-7 gap-1 text-xs"
+            onClick={() => { window.location.hash = "#/pricing"; }}
+            data-testid="upgrade-pro-cta"
+          >
+            Upgrade to Pro
+          </Button>
+        </div>
+      )}
 
       {/* Filter Bar */}
       <div className="px-4 pb-2 flex items-center gap-2 flex-wrap">
